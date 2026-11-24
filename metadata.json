@@ -1,0 +1,6 @@
+{
+  "name": "BOLLYWOOD CUT",
+  "description": "Reconstruct sliced vintage Bollywood movie posters piece by piece, then identify the iconic Indian film.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Onest", system-ui, -apple-system, sans-serif;
+  --font-sans: "Onest", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    font-family: var(--font-sans);
+    background-color: #111111;
+    color: #f0f0f0;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle GoDubDub matte dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d2d2d;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #42424a;
+}
+
+@keyframes lockFlash {
+  0% {
+    opacity: 0.92;
+    transform: scale(0.97);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.015);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes comboPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px) scale(0.92);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1.04);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -6px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -14px) scale(0.96);
+  }
+}
+
+@keyframes posterSheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  35% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(180%) skewX(-18deg);
+  }
+}
+
+@keyframes wrongShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+.animate-lock-flash {
+  animation: lockFlash 420ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-combo-pop {
+  animation: comboPop 1150ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-poster-sheen {
+  animation: posterSheen 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-wrong-shake {
+  animation: wrongShake 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-lock-flash,
+  .animate-combo-pop,
+  .animate-poster-sheen,
+  .animate-wrong-shake {
+    animation: none !important;
+  }
+}
